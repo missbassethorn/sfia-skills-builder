@@ -1,0 +1,17 @@
+<h1>SFIA Viewer</h1>
+<div>
+  <%= label_tag(:category_id, "Categories:") %>
+  <%= collection_select(:category, :category_id, Category.order(:name), :id, :name, {include_blank: true}) %>
+</div>
+<div>
+  <%= label_tag(:subcategory_id, "Subcategories:") %>
+  <%= collection_select(:subcategory, :subcategory_id, Subcategory.order(:name), :id, :name, {include_blank: true}) %>
+</div>
+<div>
+  <%= label_tag(:skill, "Skills:") %>
+  <%= collection_select(:skill, :skill_id, Skill.order(:name), :id, :name, {include_blank: true}) %>
+</div>
+<div>
+  <%= label_tag(:level, "Levels:") %>
+  <%= select_tag(:level, options_for_select(SkillLevel.all.order(level: :desc).pluck(:level).uniq)) %>
+</div>
