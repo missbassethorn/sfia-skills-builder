@@ -5,11 +5,11 @@
 </div>
 <div>
   <%= label_tag(:subcategory_id, "Subcategories:") %>
-  <%= collection_select(:subcategory, :subcategory_id, Subcategory.order(:name), :id, :name, {include_blank: true}) %>
+  <%= grouped_collection_select(:subcategory, :subcategory_id, Category.order(:name), :subcategories, :name, :id, :name, {include_blank: true}) %>
 </div>
 <div>
   <%= label_tag(:skill, "Skills:") %>
-  <%= collection_select(:skill, :skill_id, Skill.order(:name), :id, :name, {include_blank: true}) %>
+  <%= grouped_collection_select(:skill, :skill_id, Subcategory.order(:name), :skills, :name, :id, :name, {include_blank: true}) %>
 </div>
 <div>
   <%= label_tag(:level, "Levels:") %>
