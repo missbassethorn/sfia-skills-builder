@@ -1,0 +1,5 @@
+<%= label_tag(:skill_code, "Skill code:") %>
+<%= text_field_tag(:skill_code, @skill.code) %>
+<p/>
+<%= label_tag(:skill_description, "Skill description:") %>
+<%= text_area_tag(:skill_description, @skill.description, size: "60x10") %>
